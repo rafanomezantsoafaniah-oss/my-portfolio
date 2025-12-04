@@ -547,7 +547,7 @@ body{
 }
 .profile{
     width: 99%;
-    height: 185vw;
+    height: 200vw;
     background: var(--bg-color);
     border-radius: 1vw;
     padding: 2vw;
@@ -912,7 +912,7 @@ h1{
 }
 .motivation-service{
     width: 99%;
-    height: 73vw;
+    height: 77vw;
     background: var(--bg-color);
     border-radius: 1.5vw;
     border: 1px  solid gray;
@@ -946,7 +946,7 @@ h1{
 }
 .contact{
     width: 99%;
-    height: 137vw;
+    height: 147vw;
     background: var(--bg-color);
     border-radius: 1.5vw;
     transition: var(--transition-fast);
@@ -973,12 +973,12 @@ h2{
 }
 .moyen-contact{
     gap: 4vw;
-    margin: 6vw 0 0 6vw;
+    margin: 6vw 0 0 2vw;
     display: inline-flex;
     align-items: center;
 }
 .my-cv{
-    width: 35vw;
+    width: 38vw;
     height: 6vw;
     border: none;
     border-radius: 1.5vw;
@@ -992,7 +992,7 @@ h2{
     align-items: center;
 }
 .email-envoyé{
-    width: 39vw;
+    width: 42vw;
     height: 6vw;
     border: 1px solid white;
     border-radius: 1.5vw;
