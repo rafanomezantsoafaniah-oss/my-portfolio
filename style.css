@@ -762,7 +762,7 @@ h1{
 }
 .motivation-service{
     width: 99%;
-    height: 77vw;
+    height: 80vw;
     border-radius: 1.5vw;
     border: 1px  solid gray;
     margin: .7vw 0 .5vw .7vw;
@@ -789,6 +789,7 @@ h1{
     font-size: 4.5vw;
     transition: var(--transition-fast);
     padding: 0 0 0 1vw;
+    text-align: justify;
 }
 .important{
     color: var(--texte);
