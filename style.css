@@ -3,133 +3,93 @@ margin: 0;
 padding : 0;
 box-sizing: border-box;
 }
+:root {
+    --bg: #ffffff;
+    --bg1: white;
+    --bg2: rgba(226, 218, 218, 0.867);
+    --text: black;
+    --texte: #ec4899;
+    --bgtg: rgba(152, 147, 147, 0.867);
+    --textetg: rgb(228, 214, 19);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+    --transition-fast: all 0.15s ease;
+}
+body.dark{
+    --bg: black;
+    --bg1:  rgba(54, 54, 54, 0.867);
+    --bg2: rgb(30, 30, 30);
+    --text: #dad8d8;
+    --texte: rgb(228, 9, 82);
+    --bgtg: #111c2c;
+    --textetg: #e2e8f0;
+    --primary-color: #e2e8f0;
+    color: #e2e8f0 #0f172a;
+    --light-bg: var(--dark-bg);
+    --light-card: var(--dark-card);
+    --light-border: var(--dark-border);
+    --text-dark: #e2e8f0;
+    --text-lighter: #94a3b8;
+    --text-light: #cbd5e1;
+    --text-muted: #94a3b8;
+}
+.theme-toggle {
+  color: var(--text);
+  background: var(--bg2);
+  box-shadow: 0 2px 8px rgba(241, 167, 38, 0.3);
+  border-radius: 5vw;
+  width: 7.5vw;
+  height: 2.5vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: .5vw .5vw .5vw .2vw;
+}
+.theme-toggle span {
+  transition: transform 0.3s;
+  background: var(--bgtg);
+  border-radius: 50%;
+  height: 2.3vw;
+  color: var(--textetg);
+  width: 2.3vw;
+  font-size: 1.5vw;
+}
+.theme-toggle span i{
+  margin: .5vw;
+}
+.theme-toggle.dark span {
+  transform: translateX(4.1vw);
+}
 body{
     display: flex;
     justify-content: space-around;
     align-items: start;
-    background-color: var(--bg-color);
-    transition: var(--transition-fast);
     padding: .5vw;
+    background: var(--bg);
+    transition:  0.5s;
 }
 .profile{
     width: 49%;
-    height: 86vw;
-    background: var(--bg-color);
+    height: 92vw;
+    background: var(--bg1);
     transition: var(--transition-fast);
     border-radius: 1vw;
     color: white;
     border: 1px  solid gray;
+    box-shadow: inset 0px 0px 7px #666d;
+    /* box-shadow: inset 0 0 20px gray, 0 4px 5px gray; */
 }
 .logo{
-    gap: 31.5vw;
+    gap: 30vw;
+    position: relative;
     display: flex;
     align-items: center;
     padding: 1vw;
 }
 .fa-layer-group{
+    /* position: fixed; */
     color: pink;
     background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
-}
-.logo-controls {
-    display: flex;
-    gap: .5vw;
-    align-items: center;
-}
-
-/* body.dark-mode {
-  background-color: #121212;
-  color: #fff;
-} */
-#modeToggle {
-  /* position: fixed; */
-  /* top: 20px;
-  right: 20px; */
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-
-.dark-mode-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.toggle-label {
-    cursor: pointer;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 1vw;
-    min-height: 1vw;
-}
-
-.toggle-checkbox {
-    display: none;
-}
-
-.toggle-slider {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4vw;
-    height: 2vw;
-    background: linear-gradient(90deg, rgb(229, 197, 197), white);
-    border-radius: .5vw;
-    transition: var(--transition-fast);
-    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
-}
-
-.toggle-slider i {
-    position: absolute;
-    font-size: 1vw;
-    transition: var(--transition-fast);
-}
-
-.toggle-slider .fa-sun {
-    left: 2.5vw;
-    color: white;
-    opacity: 1;
-}
-
-.toggle-slider .fa-moon {
-    right: 2.5vw;
-    color: #1e293b;
-    opacity: 0;
-}
-
-.toggle-checkbox:checked + .toggle-slider {
-    background: linear-gradient(90deg, #68a3c5, #219ccd);
-    box-shadow: 0 2px 8px rgba(99, 161, 241, 0.3);
-}
-
-.toggle-checkbox:checked + .toggle-slider .fa-sun {
-    opacity: 0;
-}
-
-.toggle-checkbox:checked + .toggle-slider .fa-moon {
-    opacity: 1;
-    color: white;
-}
-
-.toggle-label:hover .toggle-slider {
-    transform: scale(1.05);
-}
-
-.toggle-label:active .toggle-slider {
-    transform: scale(0.98);
-}
-
-.toggle-checkbox:focus-visible + .toggle-slider {
-    box-shadow: 0 0 0 3px var(--light-card), 0 0 0 5px var(--primary-color);
-}
-
-body.dark-mode .toggle-checkbox:focus-visible + .toggle-slider {
-    box-shadow: 0 0 0 3px var(--dark-card), 0 0 0 5px var(--primary-color);
 }
 .Portfolio{
     display: flex;
@@ -140,8 +100,8 @@ body.dark-mode .toggle-checkbox:focus-visible + .toggle-slider {
     border: none;
     border-radius: .5vw;
     font-size: 1.3vw;
-    background-color: var(--btn-bg);
-    color: var(--btn-text);
+    background-color: var(--bg2);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .my-pictire{
@@ -154,7 +114,7 @@ body.dark-mode .toggle-checkbox:focus-visible + .toggle-slider {
 h1{
     font-size: 2.5vw;
     text-align: center;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .introduction{
@@ -162,59 +122,31 @@ h1{
     margin: 2vw auto 4vw auto;
     font-size: 1.5vw;
     text-align-last: center;
-    color: var(--text-color);
-    transition: var(--transition-fast);
-}
-.fa-html5{
-    color: var(--text-color);
-    transition: var(--transition-fast);
-}
-.fa-css3-alt{
-    color: var(--text-color);
-    transition: var(--transition-fast);
-}
-.fa-js{
-    color: var(--text-color);
-    transition: var(--transition-fast);
-}
-.fa-php{
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-bootstrap{
-    color: var(--text-color);
-    transition: var(--transition-fast);
-}
-.mysql{
-    color: var(--text-color);
-    transition: var(--transition-fast);
-}
-.fa-git{
-    color: var(--text-color);
-    transition: var(--transition-fast);
-}
-.fa-github{
-    color: var(--text-color);
+    color: var(--texte);
     transition: var(--transition-fast);
 }
 .fa-figma{
-    color: var(--text-color);
+    color: var(--texte);
     transition: var(--transition-fast);
 }
 .fa-react{
-    color: var(--text-color);
+    color: var(--texte);
     transition: var(--transition-fast);
 }
 .fa-node-js{
-    color: var(--text-color);
+    color: var(--texte);
     transition: var(--transition-fast);
 }
 .fa-laravel{
-    color: var(--text-color);
+    color: var(--texte);
     transition: var(--transition-fast);
 }
 .postman{
-    color: var(--text-color);
+    color: var(--texte);
     transition: var(--transition-fast);
 }
 .a-propos{
@@ -254,23 +186,36 @@ h1{
 .block-service{
     padding: 1vw;
     width: 49.5%;
-    height: 38vw;
-    background: var(--bg-color);
+    height: 40vw;
+    background: var(--bg1);
     transition: var(--transition-fast);
     border-radius: .5vw;
     border: 1px  solid gray;
+    box-shadow: inset 1px 1px 3px #666d;
 }
 .mes-service{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 10vw;
+    width: 12vw;
     height: 2.2vw;
     border: none;
     border-radius: .5vw;
     font-size: 1.3vw;
-    background: var(--btn-bg);
-    color: var(--btn-text);
+    background: var(--bg2);
+    color: var(--text);
+}
+.mes-contacts{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 9vw;
+    height: 2.2vw;
+    border: none;
+    border-radius: .5vw;
+    font-size: 1.3vw;
+    color: var(--text);
+    background: var(--bg2);
 }
 .fa-clone{
     color: pink;
@@ -279,13 +224,13 @@ h1{
 .titre{
     padding: 3vw 0 0 0;
     font-size: 17px;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .but-servises{
     font-size: 14px;
     margin-top: 1vw;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .bouton-service{
@@ -302,79 +247,80 @@ h1{
     border-radius: .5vw;
 }
 .developpement{
-    font-size: 12px;
+    font-size: 1.2vw;
     border: none;
     height: 2.5vw;
-    color: var(--btn-text);
-    background: var(--btn-bg);
-    width: 14vw;
+    width: 13vw;
     border-radius: .5vw;
+    color: var(--text);
+    background: var(--bg2);
     transition: var(--transition-fast);
 }
 .Refonte{
-    font-size: 12px;
+    font-size: 1.2vw;
     border: none;
     height: 2.5vw;
-    color: var(--btn-text);
-    background: var(--btn-bg);
+    color: var(--text);
+    background: var(--bg2);
     transition: var(--transition-fast);
     width: 6vw;
     border-radius: .5vw;
 }
 .test{
-    font-size: 12px;
+    font-size: 1.2vw;
     border: none;
     height: 2.5vw;
-    color: var(--btn-text);
-    background: var(--btn-bg);
-    width: 11vw;
+    color: var(--text);
+    background: var(--bg2);
+    width: 10vw;
     transition: var(--transition-fast);
     border-radius: .5vw;
 }
 .performance{
-    font-size: 12px;
+    font-size: 1.2vw;
     border: none;
     height: 2.5vw;
-    color: var(--btn-text);
-    background: var(--btn-bg);
+    color: var(--text);
+    background: var(--bg2);
     width: 9vw;
     transition: var(--transition-fast);
     border-radius: .5vw;
 }
 .acces{
-    font-size: 12px;
+    font-size: 1.2vw;
     border: none;
     height: 2.5vw;
-    color: var(--btn-text);
-    background: var(--btn-bg);
+    color: var(--text);
+    background: var(--bg2);
     width: 8.5vw;
     border-radius: .5vw;
     transition: var(--transition-fast);
 }
 .solutions{
-    font-size: 12px;
+    font-size: 1.2vw;
     border: none;
     height: 2.5vw;
-    color: var(--btn-text);
-    background: var(--btn-bg);
+    color: var(--text);
+    background: var(--bg2);
     transition: var(--transition-fast);
-    width: 11.5vw;
+    width: 10.5vw;
     border-radius: .5vw;
 }
 .motivation-service{
     width: 49.5%;
-    height: 38vw;
-    background: var(--bg-color);
+    height: 40vw;
+    background: var(--bg1);
     transition: var(--transition-fast);
     border-radius: .5vw;
     border: 1px  solid gray;
+    box-shadow: inset 1px 1px 3px #666d;
 }
 .lets-go{
     font-size: 8vw;
     padding: 6vw;
     text-align: center;
     margin: auto 0;
-    color: var(--text-color);
+    color: var(--text);
     width: 100%;
     height: 50%;
     border-radius: .5vw .5vw 0 0;
@@ -384,47 +330,49 @@ h1{
     background-blend-mode: lighten;
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: inset 1px 1px 3px #666d;
 }
 .intention{
-    color: var(--text-color);
-    font-size: 14px;
+    color: var(--text);
+    font-size: 1.5vw;
     padding: 1vw 1vw 0 1vw;
     transition: var(--transition-fast);
 }
 .intentions{
-    color: var(--text-color);
+    color: var(--text);
     font-size: 14px;
     padding: 0 0 0 1vw;
     transition: var(--transition-fast);
 }
 .important{
-    color: rgb(228, 9, 82);
+    color: var(--texte);
 }
 .contact{
     width: 100%;
-    height: 47vw;
-    background: var(--bg-color);
+    height: 51vw;
+    background: var(--bg1);
     transition: var(--transition-fast);
     border-radius: 1vw;
     margin-top: 1vw;
     padding: 1vw;
     border: 1px  solid gray;
+    box-shadow: inset 1px 1px 3px #666d;
 }
 .fa-database{
     color: pink;
     background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
 }
 h2{
-    color: var(--text-color);
     font-size: 18px;
     margin: 4vw auto 2vw auto;
     text-align: center;
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .message{
     text-align: center;
     font-size: 14px;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .moyen-contact{
@@ -439,8 +387,8 @@ h2{
     border: none;
     padding: 0.5vw;
     border-radius: .5vw;
-    background: rgb(246, 10, 89);
-    color: white;
+    background: var(--texte);
+    color: var(--text);
     outline: none;
     text-decoration: none;
     font-size: 12px;
@@ -454,29 +402,29 @@ h2{
     border: 1px solid white;
     padding: 0.5vw;
     border-radius: .5vw;
-    color: white;
     outline: none;
-    background: rgb(43, 42, 42);
     font-size: 12px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-decoration: none;
+    color: var(--text);
+    background: var(--bg2);
 }
 .email{
-    color: var(--text-color);
+    color: var(--text);
     margin: 4vw 0 0 15vw;
     transition: var(--transition-fast);
 }
 .numero-yas{
-    color: var(--text-color);
+    color: var(--text);
     margin: 1vw 0 0 19vw;
     font-size: 12px;
     font-weight: bold;
     transition: var(--transition-fast);
 }
 .numero{
-    color: var(--text-color);
+    color: var(--text);
     margin: 0 0 0 19vw;
     font-size: 12px;
     font-weight: bold;
@@ -499,22 +447,22 @@ h2{
 }
 .fa-facebook {
     margin-top: 1.5vw;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-whatsapp  {
     margin-top: 1.5vw;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-linkedin-in {
     margin-top: 1.5vw;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-twitter {
     margin-top: 1.5vw;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .money-claire{
@@ -523,32 +471,46 @@ h2{
     border-radius: 1vw;
 }
 
-    :root {
-      --bg-color: #ffffff;
-      --bg-color: white;
-      --text-color: #222222;
-      --btn-text: #f0f0f0;
-      --btn-bg: #222222;
-    }
-    body.dark-mode {
-      --bg-color: #121212;
-      --bg-color: #333333;
-      --text-color: #f5f5f5;
-      --btn-text: #333333;
-      --btn-bg: #f5f5f5;
-    }
-
 @media(max-width:768px){
+
+.theme-toggle {
+  color: var(--text);
+  background: var(--bg2);
+  box-shadow: 0 2px 8px rgba(241, 167, 38, 0.3);
+  border-radius: 5vw;
+  width: 12vw;
+  height: 5.5vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: .5vw .5vw .5vw .2vw;
+}
+.theme-toggle span {
+  transition: transform 0.3s;
+  background: var(--bgtg);
+  border-radius: 50%;
+  height: 4vw;
+  color: var(--textetg);
+  width: 4vw;
+  font-size: 3vw;
+}
+.theme-toggle span i{
+  margin: .5vw;
+}
+.theme-toggle.dark span {
+  transform: translateX(7vw);
+}    
+
 body{
     display: block;
-    background-color: var(--bg-color);
+    background-color: var(--bg);
     padding: .5vw;
     transition: var(--transition-fast);
 }
 .profile{
     width: 99%;
     height: 200vw;
-    background: var(--bg-color);
+    background: var(--bg1);
     border-radius: 1vw;
     padding: 2vw;
     color: white;
@@ -557,7 +519,7 @@ body{
     transition: var(--transition-fast);
 }
 .logo{
-    gap: 60vw;
+    gap: 52vw;
     display: flex;
     align-items: center;
     padding: 1vw;
@@ -572,114 +534,18 @@ body{
     align-items: center;
 }
 
-
-
-body {
-  background-color: #fff;
-  color: #000;
-  transition: 0.3s;
-}
-body.dark-mode {
-  background-color: #121212;
-  color: #fff;
-}
-#modeToggle {
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-
-.dark-mode-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.toggle-label {
-    cursor: pointer;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 1vw;
-    min-height: 1vw;
-}
-
-.toggle-checkbox {
-    display: none;
-}
-
-.toggle-slider {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4vw;
-    height: 2vw;
-    background: linear-gradient(90deg, rgb(229, 197, 197), white);
-    border-radius: .5vw;
-    transition: var(--transition-fast);
-    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
-}
-
-.toggle-slider i {
-    position: absolute;
-    font-size: 1vw;
-    transition: var(--transition-fast);
-}
-
-.toggle-slider .fa-sun {
-    left: 2.5vw;
-    color: white;
-    opacity: 1;
-}
-
-.toggle-slider .fa-moon {
-    right: 2.5vw;
-    color: #1e293b;
-    opacity: 0;
-}
-
-.toggle-checkbox:checked + .toggle-slider {
-    background: linear-gradient(90deg, #68a3c5, #219ccd);
-    box-shadow: 0 2px 8px rgba(99, 161, 241, 0.3);
-}
-
-.toggle-checkbox:checked + .toggle-slider .fa-sun {
-    opacity: 0;
-}
-
-.toggle-checkbox:checked + .toggle-slider .fa-moon {
-    opacity: 1;
-    color: white;
-}
-
-.toggle-label:hover .toggle-slider {
-    transform: scale(1.05);
-}
-
-.toggle-label:active .toggle-slider {
-    transform: scale(0.98);
-}
-
-.toggle-checkbox:focus-visible + .toggle-slider {
-    box-shadow: 0 0 0 3px var(--light-card), 0 0 0 5px var(--primary-color);
-}
-
-body.dark-mode .toggle-checkbox:focus-visible + .toggle-slider {
-    box-shadow: 0 0 0 3px var(--dark-card), 0 0 0 5px var(--primary-color);
-}
 .Portfolio{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 25vw;
+    width: 28vw;
     height: 6vw;
     border: none;
     border-radius: 1.5vw;
     font-size: 4vw;
+    background-color: var(--bg2);
+    color: var(--text);
+    transition: var(--transition-fast);
 }
 .my-pictire{
     width: 30vw;
@@ -691,7 +557,7 @@ body.dark-mode .toggle-checkbox:focus-visible + .toggle-slider {
 h1{
     font-size: 5vw;
     text-align: center;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .introduction{
@@ -699,72 +565,38 @@ h1{
     margin: 4vw auto 8vw auto;
     font-size: 4vw;
     text-align-last: center;
-    color: var(--text-color);
+    color: var(--text);
+    text-align: justify;
     transition: var(--transition-fast);
-}
-.fa-html5{
-    color: var(--text-color);
-    transition: var(--transition-fast);
-    font-size: 8vw;
-}
-.fa-css3-alt{
-    color: var(--text-color);
-    transition: var(--transition-fast);
-    font-size: 8vw;
-}
-.fa-js{
-    color: var(--text-color);
-    transition: var(--transition-fast);
-    font-size: 8vw;
-}
-.fa-php{
-    color: var(--text-color);
-    transition: var(--transition-fast);
-    font-size: 8vw;
 }
 .fa-bootstrap{
-    color: var(--text-color);
+    color: var(--texte);
     transition: var(--transition-fast);
     font-size: 8vw;
-}
-.mysql{
-    color: var(--text-color);
-    font-size: 8vw;
-    transition: var(--transition-fast);
-}
-.fa-git{
-    color: var(--text-color);
-    font-size: 8vw;
-    transition: var(--transition-fast);
-}
-.fa-github{
-    color: var(--text-color);
-    font-size: 8vw;
-    transition: var(--transition-fast);
 }
 .fa-figma{
-    color: var(--text-color);
     font-size: 8vw;
+    color: var(--texte);
     transition: var(--transition-fast);
 }
 .fa-react{
-    color: var(--text-color);
     font-size: 8vw;
+    color: var(--texte);
     transition: var(--transition-fast);
 }
 .fa-node-js{
-    color: var(--text-color);
     font-size: 8vw;
+    color: var(--texte);
     transition: var(--transition-fast);
 }
 .fa-laravel{
-    color: var(--text-color);
     font-size: 8vw;
+    color: var(--texte);
     transition: var(--transition-fast);
 }
 .postman{
-    color: var(--text-color);
     font-size: 8vw;
+    color: var(--texte);
     transition: var(--transition-fast);
 }
 .a-propos{
@@ -809,22 +641,34 @@ h1{
     padding: 3vw;
     width: 100%;
     height: 68vw;
-    background: var(--bg-color);
     border-radius: 1vw;
-    transition: var(--transition-fast);
     border: 1px  solid gray;
+    background: var(--bg1);
+    transition: var(--transition-fast);
 }
 .mes-service{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 28vw;
+    width: 34vw;
     height: 6vw;
     border: none;
     border-radius: 1.5vw;
     font-size: 4vw;
-    background: black;
-    color: white;
+    background: var(--bg2);
+    color: var(--text);
+}
+.mes-contacts{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 24vw;
+    height: 6vw;
+    border: none;
+    border-radius: 1.5vw;
+    font-size: 4vw;
+    color: var(--text);
+    background: var(--bg2);
 }
 .fa-clone{
     color: pink;
@@ -833,13 +677,13 @@ h1{
 .titre{
     padding: 3vw 0 0 0;
     font-size: 7vw;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .but-servises{
     font-size: 4vw;
     margin-top: 2vw;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .bouton-service{
@@ -860,8 +704,9 @@ h1{
     font-size: 3.5vw;
     border: none;
     height: 6vw;
-    color: white;
-    background: black;
+    color: var(--text);
+    background: var(--bg2);
+    transition: var(--transition-fast);
     width: 40vw;
     border-radius: 1.5vw;
 }
@@ -869,8 +714,9 @@ h1{
     font-size: 3.5vw;
     border: none;
     height: 6vw;
-    color: white;
-    background: black;
+    color: var(--text);
+    background: var(--bg2);
+    transition: var(--transition-fast);
     width: 17vw;
     border-radius: 1.5vw;
 }
@@ -878,8 +724,9 @@ h1{
     font-size: 3.5vw;
     border: none;
     height: 6vw;
-    color: white;
-    background: black;
+    color: var(--text);
+    background: var(--bg2);
+    transition: var(--transition-fast);
     width: 30vw;
     border-radius: 1.5vw;
 }
@@ -887,8 +734,9 @@ h1{
     font-size: 3.5vw;
     border: none;
     height: 6vw;
-    color: white;
-    background: black;
+    color: var(--text);
+    background: var(--bg2);
+    transition: var(--transition-fast);
     width: 24vw;
     border-radius: 1.5vw;
 }
@@ -896,8 +744,9 @@ h1{
     font-size: 3.5vw;
     border: none;
     height: 6vw;
-    color: white;
-    background: black;
+    color: var(--text);
+    background: var(--bg2);
+    transition: var(--transition-fast);
     width: 23vw;
     border-radius: 1.5vw;
 }
@@ -905,70 +754,71 @@ h1{
     font-size: 3.5vw;
     border: none;
     height: 6vw;
-    color: white;
-    background: black;
+    color: var(--text);
+    background: var(--bg2);
+    transition: var(--transition-fast);
     width: 35vw;
     border-radius: 1.5vw;
 }
 .motivation-service{
     width: 99%;
     height: 77vw;
-    background: var(--bg-color);
     border-radius: 1.5vw;
     border: 1px  solid gray;
-    transition: var(--transition-fast);
     margin: .7vw 0 .5vw .7vw;
+    background: var(--bg1);
+    transition: var(--transition-fast);
 }
 .lets-go{
     font-size: 17vw;
     padding: 10vw;
     text-align: center;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
     border-radius: 1.5vw 1.5vw 0 0;
     background: linear-gradient(to right,#2a0845  .5%,#b5179e ),radial-gradient(circle at bottom right,#ff8552 0%,transparent 40%);
 }
 .intention{
-    color: var(--text-color);
+    color: var(--text);
     font-size: 4.5vw;
     padding: 4vw 1vw 0 1vw;
     transition: var(--transition-fast);
 }
 .intentions{
-    color: var(--text-color);
+    color: var(--text);
     font-size: 4.5vw;
     transition: var(--transition-fast);
     padding: 0 0 0 1vw;
 }
 .important{
-    color: rgb(228, 9, 82);
+    color: var(--texte);
     font-size: 4.5vw;
 }
 .contact{
     width: 99%;
-    height: 147vw;
-    background: var(--bg-color);
-    border-radius: 1.5vw;
-    transition: var(--transition-fast);
-    margin-top: .5vw;
     padding: 4vw;
+    height: 147vw;
+    margin-top: .5vw;
     margin-left: .7vw;
+    border-radius: 1.5vw;
+    background: var(--bg1);
+    transition: var(--transition-fast);
 }
 .fa-database{
     color: pink;
     background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
 }
 h2{
-    color: var(--text-color);
     font-size: 4.5vw;
-    transition: var(--transition-fast);
     margin: 6vw auto 2vw auto;
     text-align: center;
+    color: var(--text);
+    transition: var(--transition-fast);
 }
 .message{
     text-align: center;
     font-size: 4vw;
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .moyen-contact{
@@ -982,14 +832,14 @@ h2{
     height: 6vw;
     border: none;
     border-radius: 1.5vw;
-    background: rgb(246, 10, 89);
-    color: white;
     outline: none;
     text-decoration: none;
     font-size: 4vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background: var(--texte);
+    color: var(--text);
 }
 .email-envoyé{
     width: 42vw;
@@ -1006,20 +856,20 @@ h2{
     text-decoration: none;
 }
 .email{
-    color: var(--text-color);
+    color: var(--text);
     margin: 6vw 0 0 24vw;
-    font-size: 4vw;
+    font-size: 6vw;
     transition: var(--transition-fast);
 }
 .numero-yas{
-    color: var(--text-color);
+    color: var(--text);
     margin: 3vw 0 0 30vw;
     font-size: 4vw;
     font-weight: bold;
     transition: var(--transition-fast);
 }
 .numero{
-    color: var(--text-color);
+    color: var(--text);
     margin: 1vw 0 0 30vw;
     font-size: 4vw;
     transition: var(--transition-fast);
@@ -1045,19 +895,19 @@ h2{
     margin: 4vw 0 0 6vw;
 }
 .fa-facebook {
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-whatsapp  {
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-linkedin-in {
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-twitter {
-    color: var(--text-color);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 

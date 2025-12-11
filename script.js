@@ -1,24 +1,22 @@
-const toggleBtn = document.getElementById('modeToggle');
-  const icon = document.getElementById('icon');
-  // Function manova ny mode sy icon
-  function setMode(dark) {
-    if (dark) {
-      document.body.classList.add('dark-mode');
-      icon.textContent = '🌙';
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-mode');
-      icon.textContent = '☀️';
-      localStorage.setItem('theme', 'light');
-    }
+const toggle = document.getElementById('toggle');
+const icon = document.getElementById('icon');
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark');
+  toggle.classList.add('dark');
+   icon.innerHTML=`
+    <i class="fas fa-moon"></i>`
+}
+
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  toggle.classList.toggle('dark');
+  if (document.body.classList.contains('dark')) {
+    icon.innerHTML=`
+    <i class="fas fa-moon"></i>`
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+    icon.innerHTML=`
+    <i class="fas fa-sun"></i>`
   }
-  // Handler rehefa tsindriana ilay bouton
-  toggleBtn.addEventListener('click', () => {
-    const isDark = document.body.classList.contains('dark-mode');
-    setMode(!isDark);
-  });
- // Check localStorage amin'ny load
-  window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    setMode(savedTheme === 'dark');
-  });
+});
