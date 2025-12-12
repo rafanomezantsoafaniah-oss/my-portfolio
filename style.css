@@ -442,8 +442,10 @@ h2{
     margin: 3vw 0 0 0;
 }
 .reseausociaux{
+    display: block;
     height: 100%;
-    width: 3vw;
+    width: 2vw;
+    margin-top: 2vw;
 }
 .fa-facebook {
     margin-top: 1.5vw;
@@ -765,7 +767,7 @@ h1{
     height: 80vw;
     border-radius: 1.5vw;
     border: 1px  solid gray;
-    margin: .7vw 0 .5vw .7vw;
+    margin: 1.5vw 0 1.5vw .7vw;
     background: var(--bg1);
     transition: var(--transition-fast);
 }
@@ -781,19 +783,23 @@ h1{
 .intention{
     color: var(--text);
     font-size: 4.5vw;
-    padding: 4vw 1vw 0 1vw;
+    margin: 1Vw 2vw 0 2vw;
     transition: var(--transition-fast);
+    flex-wrap: wrap;
 }
 .intentions{
     color: var(--text);
     font-size: 4.5vw;
     transition: var(--transition-fast);
-    padding: 0 0 0 1vw;
-    text-align: justify;
+    padding-left: 2vw;
+    flex-wrap: wrap;
+    text-align: justify;    
 }
 .important{
     color: var(--texte);
     font-size: 4.5vw;
+    transition: var(--transition-fast);
+    flex-wrap: wrap;
 }
 .contact{
     width: 99%;
@@ -858,23 +864,23 @@ h2{
 }
 .email{
     color: var(--text);
-    margin: 6vw 0 0 24vw;
     font-size: 6vw;
+    margin-top: 6vw;
     transition: var(--transition-fast);
 }
 .numero-yas{
     color: var(--text);
-    margin: 3vw 0 0 30vw;
     font-size: 4vw;
     font-weight: bold;
+    margin-top: 3vw;
     transition: var(--transition-fast);
 }
 .numero{
     color: var(--text);
-    margin: 1vw 0 0 30vw;
     font-size: 4vw;
     transition: var(--transition-fast);
     font-weight: bold;
+    margin-top: 1vw;
 }
 .footer{
     display: block;
@@ -913,3 +919,428 @@ h2{
 }
 
  }
+
+
+@media(min-width:1200px) {
+ body{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    padding: .5vw;
+    background: var(--bg);
+    transition:  0.5s;
+}
+.profile{
+    width: 49%;
+    height: 91vw;
+    background: var(--bg1);
+    transition: var(--transition-fast);
+    border-radius: 1vw;
+    color: white;
+    border: 1px  solid gray;
+    box-shadow: inset 0px 0px 7px #666d;
+    /* box-shadow: inset 0 0 20px gray, 0 4px 5px gray; */
+}
+.logo{
+    gap: 30vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1vw;
+}
+.fa-layer-group{
+    /* position: fixed; */
+    color: pink;
+    background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
+}
+.Portfolio{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 9.5vw;
+    height: 2.2vw;
+    border: none;
+    border-radius: .5vw;
+    font-size: 1.3vw;
+    background-color: var(--bg2);
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.my-pictire{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    display: block;
+    margin: 12vw auto 2vw auto;
+}
+h1{
+    font-size: 3vw;
+    text-align: center;
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.introduction{
+    width: 80%;
+    margin: 2vw auto 4vw auto;
+    font-size: 2vw;
+    text-align-last: center;
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.fa-bootstrap{
+    font-size: 2vw;
+    color: var(--texte);
+    transition: var(--transition-fast);
+}
+.fa-figma{
+    font-size: 2vw;
+    color: var(--texte);
+    transition: var(--transition-fast);
+}
+.fa-react{
+    font-size: 2vw;
+    color: var(--texte);
+    transition: var(--transition-fast);
+}
+.fa-node-js{
+    font-size: 2vw;
+    color: var(--texte);
+    transition: var(--transition-fast);
+}
+.fa-laravel{
+    font-size: 2vw;
+    color: var(--texte);
+    transition: var(--transition-fast);
+}
+.postman{
+    font-size: 2vw;
+    color: var(--texte);
+    transition: var(--transition-fast);
+}
+svg{
+    width: 3vw;
+    height: 3vw;
+}
+.a-propos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.projet{
+    gap: 1vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 4vw 0 0 0;
+}
+.box1{
+    width: 22vw;
+    height: 22vw;
+}
+.marche{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3vw 0 0 0;
+    color: var(--bg-color);
+    transition: var(--transition-fast);
+}
+.cote-droit{
+    width: 49%;
+    height: 70%;
+    border-radius: 1vw;
+}
+.me-service{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.block-service{
+    padding: 1vw;
+    width: 49.5%;
+    height: 41vw;
+    background: var(--bg1);
+    transition: var(--transition-fast);
+    border-radius: .5vw;
+    border: 1px  solid gray;
+    box-shadow: inset 1px 1px 3px #666d;
+}
+.mes-service{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 12vw;
+    height: 2.2vw;
+    border: none;
+    border-radius: .5vw;
+    font-size: 1.3vw;
+    background: var(--bg2);
+    color: var(--text);
+}
+.mes-contacts{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 9vw;
+    height: 2.2vw;
+    border: none;
+    border-radius: .5vw;
+    font-size: 1.3vw;
+    color: var(--text);
+    background: var(--bg2);
+}
+.fa-clone{
+    color: pink;
+    background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
+}
+.titre{
+    padding: 3vw 0 0 0;
+    font-size: 2.3vw;
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.but-servises{
+    font-size: 1.7vw;
+    margin-top: 1vw;
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.bouton-service{
+    gap: 1.5vw;
+    margin-top: 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.but{
+    font-size: 12px;
+    border: none;
+    height: 2vw;
+    border-radius: .5vw;
+}
+.developpement{
+    font-size: 1.2vw;
+    border: none;
+    height: 2.5vw;
+    width: 13vw;
+    border-radius: .5vw;
+    color: var(--text);
+    background: var(--bg2);
+    transition: var(--transition-fast);
+}
+.Refonte{
+    font-size: 1.2vw;
+    border: none;
+    height: 2.5vw;
+    color: var(--text);
+    background: var(--bg2);
+    transition: var(--transition-fast);
+    width: 6vw;
+    border-radius: .5vw;
+}
+.test{
+    font-size: 1.2vw;
+    border: none;
+    height: 2.5vw;
+    color: var(--text);
+    background: var(--bg2);
+    width: 10vw;
+    transition: var(--transition-fast);
+    border-radius: .5vw;
+}
+.performance{
+    font-size: 1.2vw;
+    border: none;
+    height: 2.5vw;
+    color: var(--text);
+    background: var(--bg2);
+    width: 9vw;
+    transition: var(--transition-fast);
+    border-radius: .5vw;
+}
+.acces{
+    font-size: 1.2vw;
+    border: none;
+    height: 2.5vw;
+    color: var(--text);
+    background: var(--bg2);
+    width: 8.5vw;
+    border-radius: .5vw;
+    transition: var(--transition-fast);
+}
+.solutions{
+    font-size: 1.2vw;
+    border: none;
+    height: 2.5vw;
+    color: var(--text);
+    background: var(--bg2);
+    transition: var(--transition-fast);
+    width: 10.5vw;
+    border-radius: .5vw;
+}
+.motivation-service{
+    width: 49.5%;
+    height: 41vw;
+    background: var(--bg1);
+    transition: var(--transition-fast);
+    border-radius: .5vw;
+    border: 1px  solid gray;
+    box-shadow: inset 1px 1px 3px #666d;
+}
+.lets-go{
+    font-size: 10vw;
+    padding: 4vw;
+    text-align: center;
+    margin: auto 0;
+    color: var(--text);
+    width: 100%;
+    height: 50%;
+    border-radius: .5vw .5vw 0 0;
+    background: linear-gradient(to right,#2a0845  .5%,#b5179e ),radial-gradient(circle at bottom right,#ff8552 0%,transparent 50%);
+    /* background-blend-mode: overlay;
+    /* background: conic-gradient(from 180deg at 50% 50%,#2a0845 30deg,#2a0845 10deg,#b5179e 360deg,#2a0845 220deg,#2a0845 360deg),radial-gradient(circle at bottom right,#ff8552 0%,transparent 50%); */
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 1px 1px 3px #666d;
+}
+.intention{
+    color: var(--text);
+    font-size: 1.7vw;
+    padding: 1vw 1vw 0 1vw;
+    transition: var(--transition-fast);
+}
+.intentions{
+    color: var(--text);
+    font-size: 1.7vw;
+    padding: 0 0 0 1vw;
+    transition: var(--transition-fast);
+}
+.important{
+    color: var(--texte);
+    font-size: 1.7vw;
+}
+.contact{
+    width: 100%;
+    height: 49vw;
+    background: var(--bg1);
+    transition: var(--transition-fast);
+    border-radius: 1vw;
+    margin-top: 1vw;
+    padding: 1vw;
+    border: 1px  solid gray;
+    box-shadow: inset 1px 1px 3px #666d;
+}
+.fa-database{
+    color: pink;
+    background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
+}
+h2{
+    font-size: 2vw;
+    margin: 4vw auto 2vw auto;
+    text-align: center;
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.message{
+    text-align: center;
+    font-size: 1.8vw;
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.moyen-contact{
+    gap: 2vw;
+    margin: 3vw 0 0 6vw;
+    display: inline-flex;
+    align-items: center;
+}
+.my-cv{
+    width: 17vw;
+    height: 2.5vw;
+    border: none;
+    padding: 0.5vw;
+    border-radius: .5vw;
+    background: var(--texte);
+    color: var(--text);
+    outline: none;
+    text-decoration: none;
+    font-size: 1.7vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.email-envoyé{
+    width: 18vw;
+    height: 2.5vw;
+    border: 1px solid white;
+    padding: 0.5vw;
+    border-radius: .5vw;
+    outline: none;
+    font-size: 1.7vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text);
+    background: var(--bg2);
+}
+.email{
+    font-size: 2.3vw;
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.numero-yas{
+    color: var(--text);
+    font-size: 1.7vw;
+    font-weight: bold;
+    transition: var(--transition-fast);
+}
+.numero{
+    color: var(--text);
+    font-size: 1.7vw;
+    font-weight: bold;
+    transition: var(--transition-fast);
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 13vw;
+}
+.myphoto{
+    width: 13vw;
+    height: 13vw;
+    margin: 3vw 0 0 0;
+}
+.reseausociaux{
+    display: block;
+    height: 100%;
+    width: 2vw;
+    margin-top: 2vw;
+}
+.fa-facebook {
+    margin-top: 1.5vw;
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.fa-whatsapp  {
+    margin-top: 1.5vw;
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.fa-linkedin-in {
+    margin-top: 1.5vw;
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.fa-twitter {
+    margin-top: 1.5vw;
+    color: var(--text);
+    transition: var(--transition-fast);
+}
+.money-claire{
+    width: 100%;
+    height: 100%;
+    border-radius: 1vw;
+}
+}
