@@ -764,7 +764,7 @@ h1{
 }
 .motivation-service{
     width: 99%;
-    height: 80vw;
+    height: 85vw;
     border-radius: 1.5vw;
     border: 1px  solid gray;
     margin: 1.5vw 0 1.5vw .7vw;
@@ -870,9 +870,10 @@ h2{
 }
 .numero-yas{
     color: var(--text);
-    font-size: 4vw;
+    font-size: 3.5vw;
     font-weight: bold;
     margin-top: 3vw;
+    text-align: center;
     transition: var(--transition-fast);
 }
 .numero{
@@ -880,6 +881,7 @@ h2{
     font-size: 4vw;
     transition: var(--transition-fast);
     font-weight: bold;
+    text-align: center;
     margin-top: 1vw;
 }
 .footer{
@@ -1058,7 +1060,7 @@ svg{
 .block-service{
     padding: 1vw;
     width: 49.5%;
-    height: 45vw;
+    height: 41vw;
     background: var(--bg1);
     transition: var(--transition-fast);
     border-radius: .5vw;
@@ -1180,7 +1182,7 @@ svg{
 }
 .motivation-service{
     width: 49.5%;
-    height: 45vw;
+    height: 41vw;
     background: var(--bg1);
     transition: var(--transition-fast);
     border-radius: .5vw;
