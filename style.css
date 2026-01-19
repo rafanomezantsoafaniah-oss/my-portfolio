@@ -3,6 +3,10 @@ margin: 0;
 padding : 0;
 box-sizing: border-box;
 }
+@font-face {
+    font-family: slogan;
+    src: url(fontawesome/font/MeriendaOne-Regular.ttf);
+}
 button:hover{
     height: 2.5vw;
     color: #ec4899;
@@ -24,20 +28,25 @@ svg:hover{
     transform: scale(1.2);
     border: 2px solid rgba(99, 102, 241, 0.3);
 }
+.competent:hover{
+    transform: scale(2);
+}
 :root {
     --bg: #ffffff;
     --bg1: white;
     --bg2: rgba(226, 218, 218, 0.867);
     --bg3: white;
     --text: black;
+    --texta: rgba(198, 195, 195, 0.867);
     --text1: #dad8d8;
     --texte: #ec4899;
     --texte1: rgb(228, 9, 82);
-    --bgtg: rgba(152, 147, 147, 0.867);
+    --bgtg: rgba(198, 195, 195, 0.867);
     --textetg: rgb(228, 214, 19);
     --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
     --transition-fast: all 0.15s ease;
+    
 }
 body.dark{
     --bg: black;
@@ -45,10 +54,11 @@ body.dark{
     --bg2: rgb(30, 30, 30);
     --bg3: #021716fc;
     --text: #dad8d8;
+    --texta: #dad8d8;
     --text1: black;
     --texte: rgb(228, 9, 82);
     --text1: #ec4899;
-    --bgtg: #111c2c;
+    --bgtg: #393a3b;
     --textetg: #e2e8f0;
     --primary-color: #e2e8f0;
     color: #e2e8f0 #0f172a;
@@ -63,7 +73,7 @@ body.dark{
 .theme-toggle {
   color: var(--text);
   background: var(--bg2);
-  box-shadow: 0 2px 8px rgba(241, 167, 38, 0.3);
+  box-shadow: 0 2px 8px rgba(69, 70, 70, 0.3);
   border-radius: 5vw;
   width: 7.5vw;
   height: 2.5vw;
@@ -82,7 +92,7 @@ body.dark{
   font-size: 1.5vw;
 }
 .theme-toggle span i{
-  margin: .5vw;
+  margin: .5vw .4vw .5vw .4vw;
 }
 .theme-toggle.dark span {
   transform: translateX(4.1vw);
@@ -99,14 +109,19 @@ body{
 .profile{
     width: 49%;
     height: 92vw;
-    /* background: var(--bg1); */
-    background: linear-gradient(to bottom,var(--bg1) 55%,var(--bg3) ),
-    radial-gradient(circle at bottom right,#ff8552 0%,transparent 50%);
+    background: var(--bg1);
+    /* background-image: var(--bg1),url(Image/coté.png),url(Image/cote.png),url(Image/Calque-3.png ); */
+    /* background: linear-gradient(to bottom,var(--bg1) 55%,var(--bg3) ),
+    radial-gradient(circle at bottom right,#ff8552 0%,transparent 50%); */
+    background-position: top,center left,center right,bottom;
+    background-repeat: no-repeat;
+    background-size: 60% 5% 20% 5%;
     transition: var(--transition-fast);
     border-radius: 1vw;
     color: white;
     border: 1px  solid gray;
     box-shadow: inset 0px 0px 7px #666d;
+    overflow: hidden;
     /* box-shadow: inset 0 0 20px gray, 0 4px 5px gray; */
 }
 .logo{
@@ -116,10 +131,10 @@ body{
     align-items: center;
     padding: 1vw;
 }
-.fa-layer-group{
-    /* position: fixed; */
-    color: pink;
-    background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
+.layer-group{
+    width: 1.5vw;
+    height: 1.5vw;
+    background: none;
 }
 .Portfolio{
     display: flex;
@@ -155,22 +170,6 @@ h1{
     color: var(--text);
     transition: var(--transition-fast);
 }
-.fa-bootstrap{
-    color: var(--texte);
-    transition: var(--transition-fast);
-}
-.fa-figma{
-    color: var(--texte);
-    transition: var(--transition-fast);
-}
-.fa-react{
-    color: var(--texte);
-    transition: var(--transition-fast);
-}
-.fa-node-js{
-    color: var(--texte);
-    transition: var(--transition-fast);
-}
 .fa-laravel{
     color: var(--texte);
     transition: var(--transition-fast);
@@ -180,29 +179,68 @@ h1{
     transition: var(--transition-fast);
 }
 .a-propos{
+    margin-left: 1vw;
+    width: 95%;
+    gap: 2.5vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 }
 .projet{
+    gap: -.5vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin: 4vw 0 0 0;
 }
 .boite1{
-    width: 30%;
-    height: 22vw;
+    width: 32%;
+    height: 27vw;
+    border-radius: .5vw;
+    border: 1px solid var(--bgtg);
 }
 .box1{
-    background:url(preuve/Makipay.png);
+    background:url(preuve/Makipay.png),url(preuve/Makipay.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-left: 1.9vw;
+    margin-top: 1.5vw;
     border-radius: .5vw;
-    width: 100%;
-    height: 22vw;
-    border: 1px solid var(--bgtg);
+    width: 75.5%;
+    height: 23vw;
+    transform: rotate(9deg);
+}
+.calque{
+    position: absolute;
+    width: 3vw;
+    height: 32vw;
+    margin-top: .3vw;
+    left: 1vw;
+    z-index: 1;
+    display: none;
+}
+.dark .calque{
+    display: block;
+}
+.calque1{
+    display: block;
+    position: absolute;
+    width: 3vw;
+    height: 32vw;
+    margin-top: 1vw;
+    right: 50.5%;
+    display: none;
+}
+.dark .calque1{
+    display: block;
+}
+.botom{
+    margin-left: -15vw;
+    margin-top: -40vw;
+    width: 250%;
+    height: 90vw;
 }
 .projet-img{
     width: 99%;
@@ -216,19 +254,22 @@ h1{
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid var(--bgtg);
-    border-radius: .5vw;
+    border-radius: 2.2vw;
     width: 100%;
-    height: 22vw;
+    height: 26vw;
+    margin-top: .5vw;
 }
 .box3{
-    background:url(preuve/Capture\ d’écran\ 2026-01-08\ 142919.png);
-    background-position: initial;
+    background:url(preuve/voyage.png);
+    background-position: center;
     border: 1px solid var(--bgtg);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: .5vw;
-    width: 100%;
-    height: 22vw;
+    margin-top: .5vw;
+    margin-left: .2vw;
+    width: 97%;
+    height: 26vw;
 }
 .verslien{
     display: none;
@@ -267,7 +308,7 @@ h1{
     align-items: center;
 }
 .block-service{
-    padding: 1vw;
+    padding: 1.3vw;
     width: 49.5%;
     height: 40vw;
     background: var(--bg1);
@@ -275,6 +316,16 @@ h1{
     border-radius: .5vw;
     border: 1px  solid gray;
     box-shadow: inset 1px 1px 3px #666d;
+    overflow: hidden;
+}
+.bg-service{
+    display: block;
+    width: 15vw;
+    height: 15vw;
+    margin-top: 8.5vw;
+    margin-left: -6vw;
+    filter: brightness(50%);
+    background: none;
 }
 .mes-service{
     display: flex;
@@ -288,6 +339,12 @@ h1{
     background: var(--bg2);
     color: var(--text);
     position: absolute;
+}
+.logo-service{
+    width: 1.5vw;
+    height: 1.5vw;
+    background: none;
+    margin-top: .2vw;
 }
 .mes-contacts{
     display: flex;
@@ -319,11 +376,14 @@ h1{
     transition: var(--transition-fast);
 }
 .bouton-service{
+    width: 30%;
     gap: 1.5vw;
     margin-top: 1.5vw;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    position: absolute;
+    z-index: 2;
 }
 .but{
     font-size: 12px;
@@ -394,6 +454,7 @@ h1{
 .motivation-service{
     width: 49.5%;
     height: 40vw;
+    overflow: hidden;
     background: var(--bg1);
     transition: var(--transition-fast);
     border-radius: .5vw;
@@ -401,21 +462,24 @@ h1{
     box-shadow: inset 1px 1px 3px #666d;
 }
 .lets-go{
-    font-size: 8vw;
-    padding: 6vw;
-    text-align: center;
-    margin: auto 0;
     color: var(--text);
     width: 100%;
     height: 50%;
-    border-radius: .5vw .5vw 0 0;
-    background: linear-gradient(to right,#2a0845  .5%,#b5179e ),radial-gradient(circle at bottom right,#ff8552 0%,transparent 50%);
-    /* background-blend-mode: overlay;
-    /* background: conic-gradient(from 180deg at 50% 50%,#2a0845 30deg,#2a0845 10deg,#b5179e 360deg,#2a0845 220deg,#2a0845 360deg),radial-gradient(circle at bottom right,#ff8552 0%,transparent 50%); */
+    background: url(Image/bg.png);
     background-blend-mode: lighten;
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: inset 1px 1px 3px #666d;
+    overflow: hidden;
+}
+.go-motive{
+    width: 20vw;
+    height: 20vw;
+    margin: 3.9vw 1vw;
+}
+.texte-motivation{
+    background: var(--bg);
+    height: 50%;
 }
 .intention{
     color: var(--text);
@@ -444,12 +508,12 @@ h1{
     box-shadow: inset 1px 1px 3px #666d;
 }
 .fa-database{
-    color: pink;
-    background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
+    height: 1.5vw;
+    width: 1.5vw;
 }
 h2{
     font-size: 18px;
-    margin: 8vw auto 2vw auto;
+    margin: 7vw auto 2vw auto;
     text-align: center;
     color: var(--text);
     transition: var(--transition-fast);
@@ -508,9 +572,19 @@ h2{
     font-weight: bold;
     transition: var(--transition-fast);
 }
+.numero-yas:hover{
+    color: var(--texte);
+    margin-right: 15vw;
+    transform: scale(1.5);
+}
+.numero:hover{
+    color: var(--texte);
+    margin-right: 15vw;
+    transform: scale(1.5);
+}
 .numero{
     color: var(--text);
-    margin: 0 0 0 19vw;
+    margin: .5vw 0 0 19vw;
     font-size: 12px;
     font-weight: bold;
     transition: var(--transition-fast);
@@ -524,68 +598,98 @@ h2{
 .myphoto{
     width: 13vw;
     height: 13vw;
-    margin: 10vw -1vw 0 0;
+    border-radius: 0 0 1vw 0;
+    margin: 4.5vw -1vw 0 0;
+    filter: brightness(30%);
 }
 .reseausociaux{
     display: block;
     height: 100%;
     width: 2vw;
-    margin-top: 2vw;
+    margin-top: -1vw;
 }
 .fa-facebook {
     margin-top: 1.5vw;
-    color: var(--texte);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-whatsapp  {
     margin-top: 1.5vw;
-    color: var(--texte);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-linkedin-in {
     margin-top: 1.5vw;
-    color: var(--texte);
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-twitter {
     margin-top: 1.5vw;
-    color: var(--texte);
+    color: var(--text);
     transition: var(--transition-fast);
 }
-.money-claire{
-    width: 100%;
-    height: 100%;
-    border-radius: 1vw;
+
+.aurevoir{
+    font-size: 2vw;
+    position: absolute;
+    padding-top: 6.5vw;
+    margin-left: -3vw;
+    color: var(--texta);
+    transform: rotate(-20deg);
+    z-index: 1;
+    font-family: slogan;
 }
 
 @media(max-width:768px){
-
+button:hover{
+    height: 7vw;
+    color: #ec4899;
+    transform: scale(1.2);
+    border: 2px solid rgba(99, 102, 241, 0.3);
+}
+.developpement:hover{
+    color: #ec4899;
+    transform: scale(1.1);
+    border: 2px solid rgba(99, 102, 241, 0.3);
+}
+.mes-service:hover{
+    color: #ec4899;
+    transform: scale(1.15);
+    border: 2px solid rgba(99, 102, 241, 0.3);
+}
+svg:hover{
+    color: #ec4899;
+    transform: scale(1.2);
+    border: 2px solid rgba(99, 102, 241, 0.3);
+}
 .theme-toggle {
   color: var(--text);
   background: var(--bg2);
   box-shadow: 0 2px 8px rgba(241, 167, 38, 0.3);
   border-radius: 5vw;
-  width: 12vw;
-  height: 5.5vw;
+  width: 15vw;
+  height: 6.5vw;
   cursor: pointer;
   display: flex;
   align-items: center;
   padding: .5vw .5vw .5vw .2vw;
+  position: absolute;
+  margin: 3vw 0 0 80vw;
 }
 .theme-toggle span {
   transition: transform 0.3s;
   background: var(--bgtg);
   border-radius: 50%;
-  height: 4vw;
+  height: 6vw;
   color: var(--textetg);
-  width: 4vw;
-  font-size: 3vw;
+  width: 6vw;
+  font-size: 5vw;
 }
 .theme-toggle span i{
   margin: .5vw;
 }
 .theme-toggle.dark span {
-  transform: translateX(7vw);
+  transform: translateX(8vw);
 }    
 
 body{
@@ -597,7 +701,7 @@ body{
 }
 .profile{
     width: 99%;
-    height: 200vw;
+    height: 665vw;
     background: var(--bg1);
     border-radius: 1vw;
     padding: 2vw;
@@ -611,10 +715,12 @@ body{
     display: flex;
     align-items: center;
     padding: 1vw;
+    position: relative;
 }
-.fa-layer-group{
-    color: pink;
-    background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
+.layer-group{
+    width: 4.5vw;
+    height: 4.5vw;
+    background: none;
 }
 .logo-controls {
     display: flex;
@@ -634,6 +740,8 @@ body{
     background-color: var(--bg2);
     color: var(--text);
     transition: var(--transition-fast);
+    position: absolute;
+    margin-top: 3vw;
 }
 .my-pictire{
     width: 30vw;
@@ -695,19 +803,81 @@ h1{
     gap: 8vw;
 }
 .projet{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 4vw 0 0 0;
-}
-.money-claire{
-    width: 100%;
-    height: 100%;
-    border-radius: 2vw;
+    display: block;
+    margin-left: 5%;
 }
 .box1{
-    width: 40vw;
-    height: 40vw;
+    width: 100%;
+    height: 100%;
+}
+.boite1{
+    width: 95%;
+    height: 165vw;
+    border-radius: 5vw;
+    border: 3px solid var(--bgtg);
+    margin-bottom: 10vw;
+}
+.box1{
+    background: url(preuve/Makipay.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 7vw;
+    transform: none;
+    width: 96%;
+    height: 99%;
+    margin-top: 1vw;
+    margin-left: 2vw;
+}
+.dark .calque{
+    display: none;
+    }
+.dark .calque1{
+    display: none;
+    }
+.botom{
+    margin-left: -15vw;
+    margin-top: -40vw;
+    width: 250%;
+    height: 100vw;
+}
+.projet-img{
+    width: 99%;
+    height: 90%;
+    object-fit: initial;
+    display: block;
+}
+.box2{
+    background:url(preuve/Moneyclaire\ \(2\).png);
+    background-position: initial;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid var(--bgtg);
+    border-radius: 17vw;
+    transform: none;
+    width: 96%;
+    height: 99%;
+    margin-top: 1vw;
+    margin-left: 2vw;
+}
+.box3{
+    background:url(preuve/voyage.png);
+    background-position: center;
+    border: 1px solid var(--bgtg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 7vw;
+    transform: none;
+    width: 96%;
+    height: 99%;
+    margin-top: 1vw;
+    margin-left: 2vw;
+}
+.verslien{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1vw;
 }
 .marche{
     display: flex;
@@ -715,6 +885,9 @@ h1{
     align-items: center;
     margin: 3vw 0 0 0;
     color: #1e293b;
+}
+.next{
+    display: none;
 }
 .cote-droit{
     width: 99%;
@@ -746,6 +919,12 @@ h1{
     background: var(--bg2);
     color: var(--text);
 }
+.logo-service{
+    width: 4vw;
+    height: 4vw;
+    background: none;
+    margin-top: .2vw;
+}
 .mes-contacts{
     display: flex;
     justify-content: space-evenly;
@@ -763,7 +942,7 @@ h1{
     background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
 }
 .titre{
-    padding: 3vw 0 0 0;
+    padding: 8vw 0 0 0;
     font-size: 7vw;
     color: var(--text);
     transition: var(--transition-fast);
@@ -775,12 +954,21 @@ h1{
     transition: var(--transition-fast);
 }
 .bouton-service{
+    width: 100%;
     gap: 2vw;
-    padding: 1.5vw 0 0 0;
     margin: 7vw 0 .5vw 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+.bg-service{
+    display: block;
+    width: 30vw;
+    height: 30vw;
+    margin-top: 11vw;
+    margin-left: -6vw;
+    filter: brightness(50%);
+    background: none;
 }
 .but{
     font-size: 3.5vw;
@@ -850,7 +1038,7 @@ h1{
 }
 .motivation-service{
     width: 99%;
-    height: 85vw;
+    height: 86vw;
     border-radius: 1.5vw;
     border: 1px  solid gray;
     margin: 1.5vw 0 1.5vw .7vw;
@@ -858,13 +1046,22 @@ h1{
     transition: var(--transition-fast);
 }
 .lets-go{
-    font-size: 17vw;
-    padding: 10vw;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
     text-align: center;
-    color: var(--text);
     transition: var(--transition-fast);
     border-radius: 1.5vw 1.5vw 0 0;
-    background: linear-gradient(to right,#2a0845  .5%,#b5179e ),radial-gradient(circle at bottom right,#ff8552 0%,transparent 40%);
+}
+.go-motive{
+    width: 47vw;
+    height: 47vw;
+}
+.texte-motivation{
+    padding: 1.5vw;
+    margin-top: -.5vw;
+    background: var(--bg);
+    height: 50%;
 }
 .intention{
     color: var(--text);
@@ -898,12 +1095,12 @@ h1{
     transition: var(--transition-fast);
 }
 .fa-database{
-    color: pink;
-    background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
+    height: 3vw;
+    width: 3vw;
 }
 h2{
     font-size: 4.5vw;
-    margin: 6vw auto 2vw auto;
+    margin: 12vw auto 2vw auto;
     text-align: center;
     color: var(--text);
     transition: var(--transition-fast);
@@ -954,6 +1151,13 @@ h2{
     margin-top: 6vw;
     transition: var(--transition-fast);
 }
+.email:hover{
+    transform: scale(1.1);
+}
+.ma-numero{
+    text-align: center;
+    margin-left: -30vw;
+}
 .numero-yas{
     color: var(--text);
     font-size: 3.5vw;
@@ -961,6 +1165,9 @@ h2{
     margin-top: 3vw;
     text-align: center;
     transition: var(--transition-fast);
+}
+.numero-yas:hover{
+    transform: scale(1.5);
 }
 .numero{
     color: var(--text);
@@ -970,6 +1177,9 @@ h2{
     text-align: center;
     margin-top: 1vw;
 }
+.numero:hover{
+    transform: scale(1.5);
+}
 .footer{
     display: block;
     justify-content: center;
@@ -978,7 +1188,7 @@ h2{
 }
 .myphoto{
     width: 100%;
-    height: 45vw;
+    height: 43.5vw;
     border-radius: 2vw;
 }
 .reseausociaux{
@@ -990,22 +1200,34 @@ h2{
     margin: 4vw 0 0 6vw;
 }
 .fa-facebook {
-    color: var(--texte);
+    font-size: 6vw;
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-whatsapp  {
-    color: var(--texte);
+    font-size: 6vw;
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-linkedin-in {
-    color: var(--texte);
+    font-size: 6vw;
+    color: var(--text);
     transition: var(--transition-fast);
 }
 .fa-twitter {
-    color: var(--texte);
+    font-size: 6vw;
+    color: var(--text);
     transition: var(--transition-fast);
 }
-
+.aurevoir{
+    font-size: 9vw;
+    position: absolute;
+    padding-top: 20vw;
+    margin-left: 10vw;
+    color: var(--texta);
+    transform: rotate(-20deg);
+    z-index: 1;
+}
  }
 
 
@@ -1021,7 +1243,7 @@ h2{
 }
 .profile{
     width: 49%;
-    height: 91vw;
+    height: 96vw;
     background: var(--bg1);
     transition: var(--transition-fast);
     border-radius: 1vw;
@@ -1037,10 +1259,10 @@ h2{
     align-items: center;
     padding: 1vw;
 }
-.fa-layer-group{
-    /* position: fixed; */
-    color: pink;
-    background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
+.layer-group{
+    width: 1.5vw;
+    height: 1.5vw;
+    background: none;
 }
 .Portfolio{
     display: flex;
@@ -1122,10 +1344,6 @@ svg{
     align-items: center;
     margin: 4vw 0 0 0;
 }
-.box1{
-    width: 22vw;
-    height: 22vw;
-}
 .marche{
     display: flex;
     justify-content: space-around;
@@ -1147,7 +1365,7 @@ svg{
 .block-service{
     padding: 1vw;
     width: 49.5%;
-    height: 41vw;
+    height: 45vw;
     background: var(--bg1);
     transition: var(--transition-fast);
     border-radius: .5vw;
@@ -1166,6 +1384,12 @@ svg{
     background: var(--bg2);
     color: var(--text);
 }
+.logo-service{
+    width: 1.5vw;
+    height: 1.5vw;
+    background: none;
+    margin-top: .2vw;
+}
 .mes-contacts{
     display: flex;
     justify-content: space-evenly;
@@ -1183,7 +1407,7 @@ svg{
     background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
 }
 .titre{
-    padding: 3vw 0 0 0;
+    padding: 6vw 0 0 0;
     font-size: 2.3vw;
     color: var(--text);
     transition: var(--transition-fast);
@@ -1206,6 +1430,15 @@ svg{
     border: none;
     height: 2vw;
     border-radius: .5vw;
+}
+.bg-service{
+    display: block;
+    width: 19vw;
+    height: 19vw;
+    margin-top: 13vw;
+    margin-left: -8vw;
+    filter: brightness(50%);
+    background: none;
 }
 .developpement{
     font-size: 1.2vw;
@@ -1269,7 +1502,7 @@ svg{
 }
 .motivation-service{
     width: 49.5%;
-    height: 41vw;
+    height: 45vw;
     background: var(--bg1);
     transition: var(--transition-fast);
     border-radius: .5vw;
@@ -1277,21 +1510,20 @@ svg{
     box-shadow: inset 1px 1px 3px #666d;
 }
 .lets-go{
-    font-size: 10vw;
-    padding: 4vw;
-    text-align: center;
     margin: auto 0;
-    color: var(--text);
     width: 100%;
     height: 50%;
     border-radius: .5vw .5vw 0 0;
-    background: linear-gradient(to right,#2a0845  .5%,#b5179e ),radial-gradient(circle at bottom right,#ff8552 0%,transparent 50%);
-    /* background-blend-mode: overlay;
-    /* background: conic-gradient(from 180deg at 50% 50%,#2a0845 30deg,#2a0845 10deg,#b5179e 360deg,#2a0845 220deg,#2a0845 360deg),radial-gradient(circle at bottom right,#ff8552 0%,transparent 50%); */
-    background-blend-mode: lighten;
-    background-repeat: no-repeat;
-    background-size: cover;
     box-shadow: inset 1px 1px 3px #666d;
+}
+.go-motive{
+    width: 20vw;
+    height: 20vw;
+}
+.texte-motivation{
+    padding: .5vw;
+    background: var(--bg);
+    height: 50%;
 }
 .intention{
     color: var(--text);
@@ -1311,7 +1543,7 @@ svg{
 }
 .contact{
     width: 100%;
-    height: 49vw;
+    height: 50vw;
     background: var(--bg1);
     transition: var(--transition-fast);
     border-radius: 1vw;
@@ -1321,12 +1553,12 @@ svg{
     box-shadow: inset 1px 1px 3px #666d;
 }
 .fa-database{
-    color: pink;
-    background: linear-gradient(rgb(98, 79, 79),rgb(10, 5, 109));
+    height: 1.5vw;
+    width: 1.5vw;
 }
 h2{
     font-size: 2vw;
-    margin: 4vw auto 2vw auto;
+    margin: 8vw auto 2vw auto;
     text-align: center;
     color: var(--text);
     transition: var(--transition-fast);
@@ -1397,9 +1629,10 @@ h2{
     height: 13vw;
 }
 .myphoto{
-    width: 13vw;
+    width: 15vw;
     height: 13vw;
-    margin: 3vw 0 0 0;
+    margin: 3.5vw 0 0 1vw;
+    background: greenyellow;
 }
 .reseausociaux{
     display: block;
@@ -1427,9 +1660,91 @@ h2{
     color: var(--texte);
     transition: var(--transition-fast);
 }
-.money-claire{
+.aurevoir{
+    font-size: 2vw;
+    position: absolute;
+    padding-top: 8vw;
+    margin-left: -1vw;
+    color: var(--texta);
+    transform: rotate(-20deg);
+    z-index: 1;
+}
+.boite1{
+    width: 32%;
+    height: 30vw;
+    border-radius: .5vw;
+    border: 1px solid var(--bgtg);
+}
+.box1{
+    background:url(preuve/Makipay.png),url(preuve/Makipay.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 1vw;
+    margin-top: 2vw;
+    border-radius: .8vw;
+    width: 85%;
+    height: 26vw;
+    transform: rotate(5deg);
+}
+.calque{
+    position: absolute;
+    width: 3vw;
+    height: 35vw;
+    margin-top: .3vw;
+    left: 1vw;
+    z-index: 1;
+}
+.calque1{
+    position: absolute;
+    width: 3vw;
+    height: 35vw;
+    margin-top: .5vw;
+    right: 50.5%;
+}
+.botom{
+    margin-left: -15vw;
+    margin-top: -40vw;
+    width: 250%;
+    height: 90vw;
+}
+.projet-img{
+    width: 99%;
+    height: 90%;
+    object-fit: initial;
+    display: block;
+}
+.box2{
+    background:url(preuve/Moneyclaire\ \(2\).png);
+    background-position: initial;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid var(--bgtg);
+    border-radius: 2.4vw;
     width: 100%;
-    height: 100%;
+    height: 29vw;
+    margin-top: .5vw;
+}
+.box3{
+    background:url(preuve/voyage.png);
+    background-position: center;
+    border: 1px solid var(--bgtg);
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 1vw;
+    margin-top: .5vw;
+    margin-left: .2vw;
+    width: 98%;
+    height: 29vw;
+}
+.verslien{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1vw;
+}
+.name{
+    text-decoration: none;
+    color: var(--text);
 }
 }
